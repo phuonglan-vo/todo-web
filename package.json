@@ -1,0 +1,30 @@
+{
+  "name": "todo-web",
+  "version": "1.0.0",
+  "description": "Du an web HTML CSS JS demo hoc Test AI & CI/CD",
+  "keywords": [
+    "web",
+    "demo"
+  ],
+  "homepage": "https://github.com/phuonglan-vo/todo-web#readme",
+  "bugs": {
+    "url": "https://github.com/phuonglan-vo/todo-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuonglan-vo/todo-web.git"
+  },
+  "license": "ISC",
+  "author": "vplan",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@vitest/coverage-v8": "^4.1.7",
+    "http-server": "^14.1.1",
+    "vitest": "^4.1.7"
+  }
+}

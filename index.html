@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO Web</title>
+    <link type="text/css" href="style/main.css" rel="stylesheet"/>
+    <script src="src/loginStore.js"></script>
 </head>
 <body>
-    <h1>Trang web <span style="color: blueviolet;">TODO</span> </h1>
-    <h2>Nội dung TODO</h2>
+    <h1>Đăng nhập</h1>
+    <form id="login-form" method="post" action="xulydangnhap.php">
+        <label>Email </label>
+        <input type="email" id="email-input" />
+        <br/>
+
+        <label>Password </label>
+        <input type="password" id="password-input"/>
+        <br/>
+
+        <button type="submit" id="login-button" data-testid="login-submit">Đăng nhập</button>
+    </form>
+    <script>
+        //tìm phần tử có id "form-login"
+        const loginForm = document.getElementById("login-form");
+        //đăng ký sự kiện "submit"
+        loginForm.addEventListener("submit", function(event){
+            event.preventDefault(); //chặn form gửi dữ liệu đi
+            //thu thập thông tin input
+            var email = document.getElementById("email-input");
+            var password = document.getElementById("password-input");
+            //gọi hàm xử lý
+            var thongbao = login(email,password);
+            alert(thongbao);
+        })
+    </script>
 </body>
 </html>
