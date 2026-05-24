@@ -27,8 +27,8 @@
         loginForm.addEventListener("submit", function(event){
             event.preventDefault(); //chặn form gửi dữ liệu đi
             //thu thập thông tin input
-            var email = document.getElementById("email-input");
-            var password = document.getElementById("password-input");
+            var email = document.getElementById("email-input").value.trim();
+            var password = document.getElementById("password-input").value.trim();
             //gọi hàm xử lý
             var thongbao = login(email,password);
             alert(thongbao);
