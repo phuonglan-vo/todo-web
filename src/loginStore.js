@@ -1,11 +1,30 @@
+//Hàm unit: kiểm tra email hợp lệ
+export function checkEmail(email) {
+    if(email == ""){
+        return false;
+    }
+    return true;
+}
+
+//Hàm unit: kiểm tra password hợp lệ
+export function checkPassword(password) {
+    if(password == ""){
+        return false;
+    }
+    return true;
+}
+
+//Hàm nghiệp vụ lớn
 function login(emailInput, passwordInput){
     //1.kiểm tra email
-    if(!emailInput){
-        return "Vui lòng nhập email";
+    var isEmailValid = checkEmail(emailInput);
+    if(!isEmailValid){
+        return "Email không hợp lệ";
     }
     //2.kiểm tra password
-    if(!passwordInput){
-        return "Vui lòng nhập password";
+    var isPasswordValid = checkPassword(passwordInput);
+    if(!isPasswordValid){
+        return "Password không hợp lệ";
     }
     //3.kiểm tra logic/nghiệp vụ
     //tài khoản có đúng không
