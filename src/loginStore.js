@@ -35,3 +35,8 @@ function login(emailInput, passwordInput){
         return "Đăng nhập thất bại!";
     }
 }
+
+//Giữ tương thích với trang HTML đang gọi login(...) từ window
+if(typeof window !== "undefined"){
+    window.login = login;
+}

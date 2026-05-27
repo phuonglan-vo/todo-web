@@ -6,6 +6,13 @@
     <title>TODO Web</title>
     <link type="text/css" href="style/main.css" rel="stylesheet"/>
     <script type="module"src="src/loginStore.js"></script>
+    <style>
+        #login-message {
+            border: 1px dashed black;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Đăng nhập</h1>
@@ -19,6 +26,7 @@
         <br/>
         
         <button type="submit" id="login-button" data-testid="login-submit">Đăng nhập</button>
+        <div id="login-message"></div>
     </form>
     <script>
         //tìm phần tử có id "form-login"
@@ -31,7 +39,8 @@
             var password = document.getElementById("password-input").value.trim();
             //gọi hàm xử lý
             var thongbao = login(email,password);
-            alert(thongbao);
+            //thông báo kết quả
+            document.getElementById("login-message").innerText = thongbao;
         })
     </script>
 </body>
