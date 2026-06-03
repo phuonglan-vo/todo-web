@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Danh sách người dùng</title>
+    <script type="module" src="src/userStore.js"></script>
+</head>
+<body>
+    <h1>Danh sách người dùng</h1>
+    <form id="frmUsers">
+        <label>Địa chỉ API URL:</label>
+        <input type='text' id='api-url' value='https://jsonplaceholder.typicode.com/users' />
+        <button type="submit" id="fetch-button">Lấy dữ liệu</button>
+        <div id="result"></div>
+    </form>
+    <script>
+        const frmUsers = document.getElementById('frmUsers');
+        frmUsers.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const resultDiv = document.getElementById('result');
+            //1. thu thập thông tin người dùng
+            const apiUrl = document.getElementById('api-url').value;
+            //2 Gọi những hàm service LOGIC
+            try {
+                debugger;
+                const html = await loadUsers(apiUrl);
+                //in ra chỗ nào đó trên màn hình
+                resultDiv.innerHTML = html;
+            } catch (error) {
+                //Nếu có lỗi quăng ra -> thì bắt lỗi và hiển thị thông báo...
+                resultDiv.innerHTML = error;
+            }
+        });
+    </script>
+</body>
+</html>
