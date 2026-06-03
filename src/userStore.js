@@ -57,4 +57,5 @@ export async function loadUsers(apiUrl){
 //Giữ tương thích với trang HTML đang gọi tinhTienGiamGia(...) từ window
 if(typeof window !== "undefined"){
     window.fetchUsers = fetchUsers;
+    window.loadUsers = loadUsers;
 }

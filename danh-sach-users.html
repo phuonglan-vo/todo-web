@@ -10,7 +10,7 @@
     <h1>Danh sách người dùng</h1>
     <form id="frmUsers">
         <label>Địa chỉ API URL:</label>
-        <input type='text' id='api-url' value='https://jsonplaceholder.typicode.com/users' />
+        <input type='text' id='api-url' value="https://jsonplaceholder.typicode.com/users" />
         <button type="submit" id="fetch-button">Lấy dữ liệu</button>
         <div id="result"></div>
     </form>
@@ -23,7 +23,6 @@
             const apiUrl = document.getElementById('api-url').value;
             //2 Gọi những hàm service LOGIC
             try {
-                debugger;
                 const html = await loadUsers(apiUrl);
                 //in ra chỗ nào đó trên màn hình
                 resultDiv.innerHTML = html;
