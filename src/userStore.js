@@ -31,6 +31,7 @@ export function validateUser(data){
     if(!isValid){
         return "Cấu trúc quy định phải có các key id, name, email, phone";
     }
+    return "Dữ liệu hợp lệ!";
 }
 //Hàm BUSINESS: lấy dữ liệu user và trình diễn
 export async function loadUsers(apiUrl){
@@ -38,7 +39,7 @@ export async function loadUsers(apiUrl){
     const data = await fetchUsers(apiUrl);
     //2. kiểm tra
     const error = validateUser(data);
-    if(error != undefined && error != ""){
+    if(error != undefined && error != "Dữ liệu hợp lệ!"){
         return error;
     }
     //3. xử lý trình diễn dạng LIST
